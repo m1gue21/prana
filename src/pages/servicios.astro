@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHero from '../components/PageHero.astro';
+import Servicios from '../components/Servicios.astro';
+import MetodologiaPreview from '../components/MetodologiaPreview.astro';
+import FAQ from '../components/FAQ.astro';
+import CTAWhatsApp from '../components/CTAWhatsApp.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  {
+    question: '¿Cómo sé si la sanación pránica es para mí?',
+    answer:
+      'Si sientes agotamiento, estrés, emociones intensas o desbalances físicos recurrentes, la sanación pránica puede ayudarte a limpiar y recargar tu campo energético. Durante la primera sesión evaluamos tu caso y definimos el enfoque ideal.'
+  },
+  {
+    question: '¿Puedo tomar sesiones online?',
+    answer:
+      'Sí. Todas las terapias energéticas y sesiones de psicoterapia pueden realizarse online. Para sanación pránica y reiki se trabaja a distancia con protocolos específicos; recibirás instrucciones para preparar tu espacio.'
+  },
+  {
+    question: '¿Qué incluye el acompañamiento terapéutico?',
+    answer:
+      'Incluye sesiones semanales, ejercicios somáticos, meditaciones guiadas, seguimiento en WhatsApp y materiales de integración. Trabajamos metas claras, con evaluación quincenal de avances.'
+  },
+  {
+    question: '¿Con cuánta anticipación debo agendar?',
+    answer:
+      'Los cupos se abren mensualmente. Te recomiendo agendar con al menos una semana de anticipación. Si necesitas un espacio urgente, escríbeme por WhatsApp y haré lo posible por brindarte un lugar.'
+  }
+];
+---
+
+<BaseLayout title="Servicios · Ama Energía" description="Sanación pránica, reiki, terapia holística y psicoterapia integrativa con Alejandra Álvarez.">
+  <Navbar />
+  <main class="pt-24">
+    <PageHero
+      eyebrow="Servicios Ama"
+      title="Sanación pránica, reiki, terapia holística y psicoterapia integrativa"
+      description="Cada servicio está diseñado para acompañar distintas capas de tu proceso: aliviar síntomas físicos, liberar emociones densas, cultivar autoconciencia y crear hábitos amorosos para sostener tu expansión."
+    />
+    <Servicios />
+
+    <section class="bg-white py-24">
+      <div class="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+        <div class="space-y-6 animate-fade-up">
+          <h2 class="font-display text-3xl font-semibold text-dark">¿Cómo elegir tu servicio?</h2>
+          <p class="text-base text-dark/70">
+            Si buscas un reinicio energético inmediato, empieza con sanación pránica o reiki. Si necesitas acompañamiento emocional, terapia holística te ofrece herramientas de autoconciencia. Para procesos profundos de transformación, la psicoterapia integrativa combina energía, cuerpo y mente.
+          </p>
+          <ul class="space-y-4 text-sm text-dark/75">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-600">1</span>
+              <span>Agendamos una entrevista inicial para conocer tu historia, síntomas físicos, emociones y objetivos.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-600">2</span>
+              <span>Seleccionamos el servicio o plan ideal y definimos la frecuencia y modalidad (presencial u online).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-600">3</span>
+              <span>Recibes guía previa, rituales sugeridos y acompañamiento por WhatsApp entre sesiones.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-[36px] border border-primary-100 bg-white/90 p-10 shadow-[0_25px_65px_rgba(68,22,132,0.1)] backdrop-blur animate-fade-up animate-delay-150">
+          <h3 class="font-display text-2xl font-semibold text-primary-600">Inversión y formas de pago</h3>
+          <p class="mt-4 text-sm text-dark/70">
+            Las tarifas varían según el servicio y la duración del proceso. Al reservar recibirás el detalle actualizado y opciones de pago (transferencia, Yape, PayPal). Existen cupos solidarios cada mes; si los necesitas, indícalo en tu mensaje.
+          </p>
+          <a
+            href="https://wa.me/51999999999"
+            target="_blank"
+            rel="noreferrer"
+            class="mt-6 inline-flex items-center gap-3 rounded-full bg-primary-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-primary-400"
+          >
+            Consultar disponibilidad
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <MetodologiaPreview />
+    <FAQ title="Preguntas frecuentes" description="Si aún tienes dudas escríbeme y con gusto te orientaré." items={faqs} />
+    <CTAWhatsApp />
+  </main>
+  <Footer />
+</BaseLayout>

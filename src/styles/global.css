@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply font-sans bg-white text-dark;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+@layer utilities {
+  .animate-delay-150 {
+    animation-delay: 150ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-450 {
+    animation-delay: 450ms;
+  }
+}
+

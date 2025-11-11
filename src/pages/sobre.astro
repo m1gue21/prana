@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHero from '../components/PageHero.astro';
+import ExperienciaPreview from '../components/ExperienciaPreview.astro';
+import CTAWhatsApp from '../components/CTAWhatsApp.astro';
+import Footer from '../components/Footer.astro';
+
+const valores = [
+  {
+    titulo: 'Amor radical',
+    detalle: 'Sostengo espacios donde tu vulnerabilidad es medicina. El amor es la frecuencia desde donde acompaño y es la brújula de todo el proceso.'
+  },
+  {
+    titulo: 'Integridad',
+    detalle: 'Trabajo ético y transparente. Si algo no es para mí, te referiré a otros profesionales de confianza.'
+  },
+  {
+    titulo: 'Espiritualidad encarnada',
+    detalle: 'Traemos lo sutil al cuerpo. No nos quedamos en el pensamiento: hacemos que la energía se vuelva acción concreta.'
+  },
+  {
+    titulo: 'Aprendizaje constante',
+    detalle: 'Actualizo mis certificaciones y me superviso periódicamente para cuidar tu proceso y el mío.'
+  }
+];
+
+const lineaTiempo = [
+  {
+    ano: '2009',
+    titulo: 'Inicio del camino energético',
+    descripcion: 'Formación en reiki usui y apertura de los primeros círculos de meditación para amigas y familias.'
+  },
+  {
+    ano: '2014',
+    titulo: 'Sanación pránica',
+    descripcion: 'Certificación oficial en sanación pránica básica y avanzada. Inicio de atención profesional en modalidad presencial y a distancia.'
+  },
+  {
+    ano: '2018',
+    titulo: 'Psicoterapia humanista',
+    descripcion: 'Estudios de psicoterapia corporal, gestalt y trauma. Integración de herramientas clínicas al trabajo energético.'
+  },
+  {
+    ano: '2022',
+    titulo: 'Ama Energía',
+    descripcion: 'Consolidación del emprendimiento Ama Energía y programas de bienestar para equipos y líderes conscientes.'
+  }
+];
+---
+
+<BaseLayout title="Sobre Alejandra · Ama Energía" description="Conoce la historia, formación y valores de Alejandra Álvarez, fundadora de Ama Energía.">
+  <Navbar />
+  <main class="pt-24">
+    <PageHero
+      eyebrow="Sobre Alejandra"
+      title="Soy Alejandra Álvarez: sanadora pránica, reiki master y psicoterapeuta"
+      description="Desde hace 15 años acompaño a personas sensibles a reconocer su luz, abrazar su sombra y diseñar un camino de bienestar sostenido."
+    />
+
+    <section class="bg-white py-24">
+      <div class="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div class="space-y-6 animate-fade-up">
+          <h2 class="font-display text-3xl font-semibold text-dark">Mi misión</h2>
+          <p class="text-base text-dark/70">
+            Acompaño procesos de transformación desde la sensibilidad y la coherencia. Creo profundamente que la energía sigue a la conciencia, y que un corazón en paz puede crear realidades nuevas. Mi trabajo es recordarte que mereces esa vida plena y acompañarte a construirla desde el amor propio y la responsabilidad personal.
+          </p>
+          <p class="text-base text-dark/70">
+            Cada programa nace de mi experiencia personal atravesando ansiedad, burnout y duelos. Las herramientas que comparto son las que me devolvieron al cuerpo y al gozo. Hoy las ofrezco para que tú también puedas habitar tu energía con alegría.
+          </p>
+        </div>
+        <div class="rounded-[36px] border border-primary-100 bg-white/90 p-10 shadow-[0_25px_65px_rgba(68,22,132,0.1)] backdrop-blur animate-fade-up animate-delay-150">
+          <h3 class="font-display text-2xl font-semibold text-primary-600">Valores que guían cada sesión</h3>
+          <ul class="mt-6 space-y-4 text-sm text-dark/75">
+            {valores.map((valor, index) => (
+              <li
+                class="rounded-2xl border border-primary-50 bg-primary-50/40 p-4 transition hover:-translate-y-1 hover:border-primary-100"
+                class:list={{
+                  'animate-fade-up': true,
+                  'animate-delay-150': index % 2 === 1
+                }}
+              >
+                <h4 class="font-semibold text-primary-600">{valor.titulo}</h4>
+                <p class="mt-2">{valor.detalle}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <ExperienciaPreview />
+
+    <section class="bg-gradient-to-r from-primary-50/70 via-white to-white py-24">
+      <div class="mx-auto max-w-5xl px-6">
+        <h2 class="text-center font-display text-3xl font-semibold text-dark">Línea de tiempo</h2>
+        <div class="mt-14 space-y-8">
+          {lineaTiempo.map((hito, index) => (
+            <div
+              class="grid gap-6 rounded-[32px] border border-primary-100 bg-white/90 p-6 shadow-[0_18px_45px_rgba(68,22,132,0.08)] transition hover:-translate-y-1 hover:border-primary-200 md:grid-cols-[120px_1fr]"
+              class:list={{
+                'animate-fade-up': true,
+                'animate-delay-150': index % 2 === 1
+              }}
+            >
+              <span class="font-display text-4xl text-primary-500 md:text-5xl">{hito.ano}</span>
+              <div>
+                <h3 class="font-display text-xl font-semibold text-dark">{hito.titulo}</h3>
+                <p class="mt-2 text-sm text-dark/70">{hito.descripcion}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTAWhatsApp />
+  </main>
+  <Footer />
+</BaseLayout>

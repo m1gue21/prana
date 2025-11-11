@@ -1,0 +1,70 @@
+---
+const testimonios = [
+  {
+    quote:
+      'Sentí cómo la energía volvía a fluir en todo mi cuerpo. Alejandra tiene una presencia amorosa y firme; salí con claridad y sin el cansancio que cargaba hacía meses.',
+    name: 'Carolina P.',
+    detail: 'Programa integral · 2024',
+    focus: 'Sanación pránica + psicoterapia'
+  },
+  {
+    quote:
+      'La respiración consciente y las meditaciones me acompañan cada mañana. Soy más compasiva conmigo y mi ansiedad bajó notablemente en pocas semanas.',
+    name: 'María Elena R.',
+    detail: 'Meditaciones 1:1 · 2025',
+    focus: 'Meditación y reiki'
+  },
+  {
+    quote:
+      'Después de la sanación dormí como hace años no lo hacía. Integrar los rituales que me compartió Alejandra me tiene enfocada, creativa y en paz.',
+    name: 'Daniela S.',
+    detail: 'Sesión pránica · 2025',
+    focus: 'Sanación pránica'
+  },
+  {
+    quote:
+      'El acompañamiento terapéutico me ayudó a abrazar mi proceso de duelo sin perderme. Siento sostén real y herramientas concretas para el día a día.',
+    name: 'Laura G.',
+    detail: 'Psicoterapia energética · 2025',
+    focus: 'Psicoterapia integrativa'
+  }
+];
+---
+
+<section class="relative overflow-hidden bg-dark py-28 text-white">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(116,43,230,0.28),_transparent_55%)]" />
+  <div class="relative mx-auto max-w-5xl px-6 lg:px-0">
+    <div class="text-center animate-fade-up">
+      <span class="inline-flex items-center rounded-full border border-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.5em] text-white/80">
+        Voces que sanan
+      </span>
+      <h2 class="mt-6 font-display text-3xl font-semibold sm:text-4xl">Testimonios de transformación</h2>
+      <p class="mt-4 text-base text-white/70">
+        Mujeres y hombres que eligieron honrar su sensibilidad, liberar memorias y abrir espacio a versiones más amorosas de sí mism@s.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-8 md:grid-cols-2">
+      {testimonios.map((testimonio, index) => (
+        <figure
+          class="group flex h-full flex-col justify-between rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur transition duration-500 hover:-translate-y-1.5 hover:border-primary-200/40 hover:bg-primary-200/10"
+          class:list={{
+            'animate-fade-up': true,
+            'animate-delay-150': index % 2 === 1,
+            'animate-delay-300': index >= 2
+          }}
+        >
+          <blockquote class="text-base italic leading-relaxed text-white/90 sm:text-lg">
+            “{testimonio.quote}”
+          </blockquote>
+          <figcaption class="mt-8">
+            <p class="font-display text-xl font-semibold">{testimonio.name}</p>
+            <p class="text-xs uppercase tracking-[0.35em] text-white/60">{testimonio.detail}</p>
+            <p class="mt-2 text-xs uppercase tracking-[0.4em] text-primary-200">{testimonio.focus}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+

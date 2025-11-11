@@ -1,0 +1,80 @@
+---
+const socials = [
+  { label: 'Instagram', href: 'https://instagram.com/alejandraalvarez', handle: '@alejandraalvarez' },
+  { label: 'WhatsApp', href: 'https://wa.me/51999999999', handle: '+51 999 999 999' },
+  { label: 'Correo', href: 'mailto:contacto@alejandraalvarez.com', handle: 'contacto@alejandraalvarez.com' }
+];
+
+const quickLinks = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Servicios', href: '/servicios' },
+  { label: 'Metodología', href: '/metodologia' },
+  { label: 'Experiencia', href: '/sobre' },
+  { label: 'Contacto', href: '/contacto' }
+];
+---
+
+<footer class="bg-dark py-16 text-white">
+  <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row md:items-start md:justify-between lg:px-8">
+    <div class="space-y-5 md:max-w-xs animate-fade-up">
+      <div class="flex items-center gap-4">
+        <img src="/logoama.png" alt="Logotipo Alejandra Álvarez" class="h-12 w-auto" />
+        <div>
+          <p class="font-display text-2xl font-semibold">Alejandra Álvarez</p>
+          <p class="text-xs uppercase tracking-[0.4em] text-white/60">Ama · Sanación pránica & terapias integrales</p>
+        </div>
+      </div>
+      <p class="text-sm text-white/70">
+        Acompañamiento amoroso para reconectar con tu energía, liberar memorias y habitarte con serenidad. Sesiones presenciales en Lima y modalidad online a todo el mundo.
+      </p>
+      <a
+        href="https://wa.me/51999999999"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center gap-3 rounded-full bg-primary-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-primary-400"
+      >
+        Agenda por WhatsApp
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="grid flex-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+      <div class="space-y-4 animate-fade-up animate-delay-150">
+        <h4 class="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">Explora</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          {quickLinks.map((link) => (
+            <li>
+              <a class="transition hover:text-primary-200" href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="space-y-4 animate-fade-up animate-delay-300">
+        <h4 class="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">Servicios</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a class="transition hover:text-primary-200" href="/servicios#sanacion-pranica">Sanación pránica</a></li>
+          <li><a class="transition hover:text-primary-200" href="/servicios#reiki">Reiki y sellado áurico</a></li>
+          <li><a class="transition hover:text-primary-200" href="/servicios#terapia-holistica">Terapia holística</a></li>
+          <li><a class="transition hover:text-primary-200" href="/servicios#psicoterapia">Psicoterapia energética</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4 animate-fade-up animate-delay-450">
+        <h4 class="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">Conecta</h4>
+        <div class="space-y-3 text-sm text-white/70">
+          {socials.map((social) => (
+            <a class="block transition hover:text-primary-200" href={social.href} target="_blank" rel="noreferrer">
+              <span class="block text-xs uppercase tracking-[0.35em] text-white/50">{social.label}</span>
+              <span class="text-white/80">{social.handle}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-12 border-t border-white/10 pt-6">
+    <p class="text-center text-xs uppercase tracking-[0.4em] text-white/50">
+      © {new Date().getFullYear()} Ama Energía · Alejandra Álvarez · Energía en movimiento
+    </p>
+  </div>
+</footer>
+

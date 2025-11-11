@@ -1,0 +1,17 @@
+# Dependencias
+node_modules/
+
+# Builds
+.dist/
+dist/
+
+# Archivos temporales
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+
+# Salidas de Astro
+.astro/types.d.ts

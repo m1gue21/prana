@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHero from '../components/PageHero.astro';
+import Contacto from '../components/Contacto.astro';
+import CTAWhatsApp from '../components/CTAWhatsApp.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  {
+    question: '¿Qué información necesito para agendar?',
+    answer: 'Tu nombre completo, país/ciudad, servicio de interés y tu disponibilidad horaria. Si tienes alguna condición médica relevante, compártela para adaptar la sesión.'
+  },
+  {
+    question: '¿Cómo funciona el pago?',
+    answer: 'Luego de coordinar fecha y hora te enviaré el enlace o cuenta para pago. Acepto transferencias locales, Yape y PayPal para sesiones internacionales.'
+  },
+  {
+    question: '¿Qué pasa si necesito reprogramar?',
+    answer: 'Puedes reprogramar con 24 horas de anticipación. Si surge una emergencia, escríbeme y buscamos la mejor alternativa.'
+  }
+];
+---
+
+<BaseLayout title="Contacto · Ama Energía" description="Agenda tu sesión de sanación pránica, reiki, terapia holística o psicoterapia con Alejandra Álvarez.">
+  <Navbar />
+  <main class="pt-24">
+    <PageHero
+      eyebrow="Contacto"
+      title="Agendemos tu sesión de sanación"
+      description="Completa el formulario o escríbeme directamente por WhatsApp. Estaré encantada de orientarte y ayudarte a elegir el servicio que mejor acompañe tu proceso."
+    />
+    <Contacto />
+    <CTAWhatsApp />
+    <FAQ title="Preguntas logísticas" items={faqs} />
+  </main>
+  <Footer />
+</BaseLayout>

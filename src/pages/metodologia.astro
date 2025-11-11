@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHero from '../components/PageHero.astro';
+import MetodologiaPreview from '../components/MetodologiaPreview.astro';
+import FAQ from '../components/FAQ.astro';
+import CTAWhatsApp from '../components/CTAWhatsApp.astro';
+import Footer from '../components/Footer.astro';
+
+const pilares = [
+  {
+    titulo: 'Presencia amorosa',
+    texto: 'Creamos un contenedor seguro donde tus emociones son bienvenidas. Desde la escucha profunda definimos la intención de cada encuentro.'
+  },
+  {
+    titulo: 'Energía + cuerpo',
+    texto: 'Trabajamos tus chakras, tu sistema nervioso y la memoria corporal. Integramos respiración, movimiento somático y rituales energéticos.'
+  },
+  {
+    titulo: 'Narrativa consciente',
+    texto: 'Exploramos creencias, diálogos internos y patrones heredados. Co-creamos nuevas narrativas con herramientas de psicoterapia y coaching.'
+  },
+  {
+    titulo: 'Acción integrada',
+    texto: 'Cada sesión concluye con un plan amoroso: prácticas diarias, límites claros, hábitos y recordatorios para sostener la frecuencia que deseas.'
+  }
+];
+
+const faqs = [
+  {
+    question: '¿Cuánto dura un proceso completo?',
+    answer:
+      'Depende de tu objetivo. Algunos procesos requieren 3 a 4 sesiones; los programas de psicoterapia y transformación profunda sugieren 8 a 12 semanas para integrar cambios sostenibles.'
+  },
+  {
+    question: '¿Qué herramientas se utilizan?',
+    answer:
+      'Sanación pránica, reiki, terapia floral, respiración consciente, meditación, técnicas somáticas, psicoterapia humanista, coaching ontológico y trabajo con símbolos energéticos.'
+  },
+  {
+    question: '¿Cuál es la estructura de una sesión?',
+    answer:
+      'Iniciamos con check-in y respiración, luego trabajamos energía o conversación terapéutica según lo requerido, finalizamos con integración, recomendaciones y seguimiento por WhatsApp.'
+  }
+];
+---
+
+<BaseLayout title="Metodología · Ama Energía" description="Descubre cómo Alejandra Álvarez integra sanación pránica, reiki, terapia holística y psicoterapia en procesos amorosos y profundos.">
+  <Navbar />
+  <main class="pt-24">
+    <PageHero
+      eyebrow="Metodología"
+      title="Un camino suave y profundo que honra tu ritmo"
+      description="Acompañamos cada proceso desde la presencia, la ciencia energética y la psicoterapia humanista. Nos enfocamos en limpiar, armonizar e integrar para que puedas habitarte con coherencia."
+    />
+
+    <section class="bg-white py-24">
+      <div class="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+        <div class="space-y-6 animate-fade-up">
+          <h2 class="font-display text-3xl font-semibold text-dark">Los pilares de Ama Energía</h2>
+          <p class="text-base text-dark/70">
+            Tu bienestar es integral. Trabajamos desde cuatro pilares que se entrelazan en cada sesión y proceso, brindándote sostén emocional, energético y práctico para tu día a día.
+          </p>
+          <ul class="space-y-4 text-sm text-dark/75">
+            {pilares.map((pilar, index) => (
+              <li
+                class="rounded-[28px] border border-primary-100 bg-white/85 p-5 shadow-[0_12px_35px_rgba(68,22,132,0.08)] transition hover:-translate-y-1 hover:border-primary-200"
+                class:list={{
+                  'animate-fade-up': true,
+                  'animate-delay-150': index % 2 === 1
+                }}
+              >
+                <h3 class="font-display text-xl font-semibold text-primary-600">{pilar.titulo}</h3>
+                <p class="mt-2 text-sm text-dark/70">{pilar.texto}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-[36px] border border-primary-100 bg-white/90 p-10 shadow-[0_25px_65px_rgba(68,22,132,0.1)] backdrop-blur animate-fade-up animate-delay-150">
+          <h3 class="font-display text-2xl font-semibold text-primary-600">Antes, durante y después</h3>
+          <p class="mt-4 text-sm text-dark/70">
+            Antes de la sesión recibes una guía personalizada para preparar tu energía. Durante el encuentro trabajamos en silencio, con música sanadora o mediante conversación consciente. Al finalizar, recibirás prácticas diarias, audio de meditación y seguimiento en WhatsApp para sostener lo que despertamos.
+          </p>
+          <p class="mt-4 text-sm text-dark/70">
+            Los procesos pueden complementarse con rituales lunares, círculos meditativos y encuentros grupales. Consulta la agenda vigente al agendar tu sesión.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <MetodologiaPreview />
+    <FAQ
+      title="Preguntas sobre la metodología"
+      description="Te comparto respuestas a las dudas más comunes. Si necesitas algo más específico, escríbeme."
+      items={faqs}
+    />
+    <CTAWhatsApp />
+  </main>
+  <Footer />
+</BaseLayout>

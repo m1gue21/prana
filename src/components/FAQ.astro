@@ -1,0 +1,31 @@
+---
+const { title = 'Preguntas frecuentes', description = '', items = [] } = Astro.props;
+---
+
+<section class="py-24">
+  <div class="mx-auto max-w-4xl px-6 lg:px-0">
+    <div class="text-center animate-fade-up">
+      <span class="inline-flex items-center rounded-full border border-primary-200/70 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-primary-500">
+        {title}
+      </span>
+      {description && <p class="mt-4 text-base text-dark/70">{description}</p>}
+    </div>
+    <div class="mt-12 space-y-4">
+      {items.map((faq, index) => (
+        <details
+          class="group rounded-3xl border border-primary-100 bg-white/85 p-6 shadow-[0_12px_35px_rgba(68,22,132,0.08)] transition duration-500 hover:border-primary-200"
+          class:list={{
+            'animate-fade-up': true,
+            'animate-delay-150': index % 2 === 1
+          }}
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-base font-semibold text-dark">
+            <span>{faq.question}</span>
+            <span class="text-primary-500 transition group-open:rotate-45">✶</span>
+          </summary>
+          <p class="mt-4 text-sm text-dark/70 sm:text-base">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+---
+const servicios = [
+  {
+    slug: 'sanacion-pranica',
+    title: 'Sanación pránica avanzada',
+    description:
+      'Purifica y energiza tus chakras con protocolos pránicos certificados. Liberamos congestiones energéticas, equilibramos las emociones y recargamos tu sistema para que recuperes claridad y entusiasmo.',
+    features: [
+      'Evaluación energética completa de chakras y campo áurico',
+      'Protocolos específicos para estrés, dolor físico y agotamiento emocional',
+      'Recomendaciones integradas para sostener la armonización en casa'
+    ],
+    duration: '75 minutos · presencial u online'
+  },
+  {
+    slug: 'reiki',
+    title: 'Reiki + sellado áurico',
+    description:
+      'Canalización de energía universal para relajar el sistema nervioso, armonizar tu cuerpo emocional y devolverle suavidad al corazón. Incluye sellado áurico y respiración guiada.',
+    features: [
+      'Imposición de manos con reiki usui y karuna',
+      'Respiración diafragmática y meditación de luz violeta',
+      'Grabación con afirmaciones para continuar integrando la experiencia'
+    ],
+    duration: '60 minutos · presencial u online'
+  },
+  {
+    slug: 'terapia-holistica',
+    title: 'Terapia holística integrativa',
+    description:
+      'Sesiones conversacionales que combinan psicoterapia humanista, coaching ontológico y herramientas somáticas. Ideal para quienes desean sostén emocional y claridad en procesos de cambio.',
+    features: [
+      'Espacio seguro para transitar duelos, ansiedad y crisis de sentido',
+      'Ejercicios somáticos y rituales personalizados',
+      'Plan de integración con prácticas semanales y seguimiento'
+    ],
+    duration: '75 minutos · formato 1:1'
+  },
+  {
+    slug: 'psicoterapia',
+    title: 'Psicoterapia con enfoque energético',
+    description:
+      'Proceso profundo de 8 a 12 semanas que integra psicoterapia, sanación energética y hábitos conscientes para transformar patrones limitantes y construir nuevas narrativas.',
+    features: [
+      'Sesiones semanales + soporte en WhatsApp',
+      'Bitácora de emociones y recursos terapéuticos',
+      'Rituales de integración para cuerpo, mente y espíritu'
+    ],
+    duration: 'Programa personalizado · 8/12 semanas'
+  }
+];
+---
+
+<section id="servicios" class="bg-gradient-to-b from-white via-accent/40 to-white py-28">
+  <div class="mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center animate-fade-up">
+      <span class="inline-flex items-center rounded-full border border-primary-200/70 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary-500">
+        Servicios Ama · Energía & bienestar
+      </span>
+      <h2 class="mt-6 font-display text-3xl font-semibold text-dark sm:text-4xl">
+        Contenedores amorosos para tu cuidado integral
+      </h2>
+      <p class="mt-4 text-base text-dark/70">
+        Diseñados para acompañarte en cada etapa del camino: desde la estabilización energética hasta procesos terapéuticos profundos con seguimiento cercano.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-8 md:grid-cols-2">
+      {servicios.map((servicio, index) => (
+        <article
+          id={servicio.slug}
+          class="group flex h-full flex-col justify-between rounded-[36px] border border-primary-100 bg-white/90 p-8 shadow-[0_15px_45px_rgba(68,22,132,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-primary-200 hover:shadow-glow"
+          class:list={{
+            'animate-fade-up': true,
+            'animate-delay-150': index % 2 === 1,
+            'animate-delay-300': index >= 2
+          }}
+        >
+          <div class="space-y-6">
+            <div class="flex items-center gap-3 text-primary-500">
+              <span class="text-3xl">✶</span>
+              <h3 class="font-display text-2xl font-semibold text-dark">{servicio.title}</h3>
+            </div>
+            <p class="text-sm text-dark/70 sm:text-base">{servicio.description}</p>
+            <ul class="space-y-3 text-sm text-dark/80">
+              {servicio.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-600">
+                    ✓
+                  </span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <span class="inline-flex rounded-full bg-primary-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500">
+              {servicio.duration}
+            </span>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="/contacto"
+                class="inline-flex items-center justify-center rounded-full border border-transparent bg-primary-500 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white transition hover:-translate-y-0.5 hover:bg-primary-400"
+              >
+                Reservar
+              </a>
+              <a
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-full border border-primary-200 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary-600 transition hover:border-primary-300 hover:text-primary-500"
+              >
+                Agenda por WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,63 @@
+---
+const credenciales = [
+  {
+    titulo: 'Sanadora pránica certificada',
+    detalle:
+      'Certificada por el Institute for Inner Studies (Master Choa Kok Sui). Protocolos avanzados para estrés, depresión, ansiedad y dolencias físicas.'
+  },
+  {
+    titulo: 'Maestra de reiki usui y karuna',
+    detalle: '12 años canalizando energía universal, facilitadora de círculos de meditación y círculos de mujeres.'
+  },
+  {
+    titulo: 'Psicoterapeuta humanista',
+    detalle: 'Formación en psicoterapia corporal y enfoque gestáltico. Especialista en trauma, límites sanos y vínculos conscientes.'
+  },
+  {
+    titulo: 'Mentora de bienestar integral',
+    detalle: 'Crea programas de autocuidado energético para organizaciones y acompaña procesos de liderazgo femenino.'
+  }
+];
+---
+
+<section class="relative overflow-hidden bg-white py-28">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(148,82,255,0.14),_transparent_60%)]" />
+  <div class="relative mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div class="space-y-6 animate-fade-up">
+        <span class="inline-flex items-center rounded-full border border-primary-200/70 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-primary-500">
+          Experiencia
+        </span>
+        <h2 class="font-display text-3xl font-semibold text-dark sm:text-4xl">
+          Alejandra Álvarez · 15 años acompañando procesos de transformación
+        </h2>
+        <p class="text-base text-dark/70">
+          Alejandra crea espacios seguros donde lo espiritual y lo terapéutico se encuentran. Combina herramientas de sanación energética con psicoterapia para reconectar tu cuerpo, emociones y visión de vida.
+        </p>
+        <a
+          href="/sobre"
+          class="inline-flex items-center gap-3 rounded-full border border-primary-200 px-5 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-primary-600 transition hover:-translate-y-0.5 hover:bg-primary-50"
+        >
+          Conocer más sobre Alejandra
+          <span aria-hidden="true">⟶</span>
+        </a>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        {credenciales.map((item, index) => (
+          <div
+            class="rounded-[32px] border border-primary-100 bg-white/90 p-6 shadow-[0_20px_50px_rgba(68,22,132,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-primary-200 hover:shadow-glow"
+            class:list={{
+              'animate-fade-up': true,
+              'animate-delay-150': index % 2 === 1,
+              'animate-delay-300': index >= 2
+            }}
+          >
+            <h3 class="font-display text-xl font-semibold text-primary-600">{item.titulo}</h3>
+            <p class="mt-3 text-sm text-dark/75">{item.detalle}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

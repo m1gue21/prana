@@ -1,0 +1,98 @@
+---
+const highlights = [
+  'Sanación pránica y reiki para restaurar tu campo energético',
+  'Terapia holística y psicoterapia integrativa con enfoque amoroso',
+  'Rituales y meditaciones guiadas para sostener tu expansión'
+];
+---
+
+<section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-white">
+  <div class="absolute inset-0">
+    <div class="absolute -top-40 -right-40 h-80 w-80 animate-float rounded-full bg-primary-100/40 blur-3xl" />
+    <div class="absolute -bottom-32 -left-32 h-72 w-72 animate-float rounded-full bg-primary-200/40 blur-3xl" style="animation-delay: 1.5s" />
+  </div>
+
+  <div class="relative mx-auto grid max-w-6xl gap-16 px-6 pt-32 pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+    <div class="space-y-10">
+      <span class="inline-flex items-center rounded-full border border-primary-200/60 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-primary-600 shadow-sm animate-fade-up">
+        Ama · Energía y bienestar integral
+      </span>
+
+      <div class="animate-fade-up animate-delay-150">
+        <h1 class="font-display text-4xl font-semibold leading-tight text-dark sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05]">
+          Expande tu energía vital y habita tu vida con propósito, calma y gozo
+        </h1>
+        <p class="mt-6 max-w-xl text-base text-dark/70 sm:text-lg">
+          Alejandra Álvarez te acompaña a limpiar, recargar y armonizar tu campo energético con sanación pránica, reiki, terapia holística y contención psicoterapéutica. Integración suave para tu mente, tu cuerpo y tu alma.
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-3 sm:gap-5">
+        {highlights.map((item, index) => (
+          <div
+            class="flex items-start gap-3 rounded-2xl border border-primary-100/80 bg-white/80 p-4 shadow-glow backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white"
+            class:list={{
+              'animate-fade-up': true,
+              'animate-delay-150': index === 1,
+              'animate-delay-300': index === 2
+            }}
+          >
+            <span class="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-500 text-sm font-semibold text-white shadow-md">
+              ✺
+            </span>
+            <span class="text-sm font-medium text-dark/80">{item}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 animate-fade-up animate-delay-300">
+        <a
+          href="/contacto"
+          class="group inline-flex items-center gap-3 rounded-full bg-primary-500 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-primary-400"
+        >
+          Reserva tu sesión
+          <span class="transition-transform group-hover:translate-x-1">→</span>
+        </a>
+        <a
+          href="/servicios"
+          class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-primary-600 transition hover:text-primary-500"
+        >
+          Conoce los programas
+          <span aria-hidden="true">⟶</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative flex justify-center lg:justify-end">
+      <div class="relative inline-flex w-full max-w-sm flex-col items-center rounded-[42px] bg-white/85 p-10 shadow-glow backdrop-blur animate-fade-up animate-delay-450">
+        <img
+          src="/logoama.png"
+          alt="Logotipo de Alejandra Álvarez Sanación Pránica"
+          class="h-40 w-auto"
+        />
+        <div class="mt-8 space-y-3 text-center">
+          <p class="font-display text-3xl font-semibold text-primary-600">Ama · Energía</p>
+          <p class="text-xs uppercase tracking-[0.5em] text-primary-400">Sanación pránica y terapias integrales</p>
+        </div>
+        <div class="mt-6 space-y-4 text-center text-sm text-dark/75">
+          <p>
+            Protocolos certificados por Master Choa Kok Sui, reiki usui, psicoterapia humanista y herramientas somáticas.
+          </p>
+          <p class="rounded-2xl border border-primary-100/70 bg-primary-50/60 p-5 font-medium text-primary-900">
+            “Energía en equilibrio, vida en plenitud.”
+          </p>
+        </div>
+        <a
+          href="https://wa.me/51999999999"
+          target="_blank"
+          rel="noreferrer"
+          class="mt-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white px-6 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary-600 transition hover:bg-primary-50"
+        >
+          Agendar por WhatsApp
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
