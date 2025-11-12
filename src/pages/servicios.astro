@@ -4,55 +4,57 @@ import Navbar from '../components/Navbar.astro';
 import PageHero from '../components/PageHero.astro';
 import Servicios from '../components/Servicios.astro';
 import MetodologiaPreview from '../components/MetodologiaPreview.astro';
+import CasosSanacion from '../components/CasosSanacion.astro';
 import FAQ from '../components/FAQ.astro';
 import CTAWhatsApp from '../components/CTAWhatsApp.astro';
 import Footer from '../components/Footer.astro';
 
 const faqs = [
   {
-    question: '¿Cómo sé si la sanación pránica es para mí?',
+    question: '¿Cómo sé si la sanación pránica enfocada en chakras es para mí?',
     answer:
-      'Si sientes agotamiento, estrés, emociones intensas o desbalances físicos recurrentes, la sanación pránica puede ayudarte a limpiar y recargar tu campo energético. Durante la primera sesión evaluamos tu caso y definimos el enfoque ideal.'
+      'Si sientes agotamiento, estrés, dolores físicos recurrentes (migrañas, digestión, articulaciones) o emociones estancadas, la sanación pránica puede ayudarte a limpiar y recargar tu campo energético. Durante la primera sesión evaluamos tu caso, chakras involucrados y definimos el enfoque ideal.'
   },
   {
     question: '¿Puedo tomar sesiones online?',
     answer:
-      'Sí. Todas las terapias energéticas y sesiones de psicoterapia pueden realizarse online. Para sanación pránica y reiki se trabaja a distancia con protocolos específicos; recibirás instrucciones para preparar tu espacio.'
+      'Sí. Todas las terapias energéticas y sesiones de psicoterapia pueden realizarse online. Para sanación pránica y reiki se trabaja a distancia con protocolos específicos; recibirás instrucciones para preparar tu espacio y seguimiento personalizado para registrar cambios físicos y mentales.'
   },
   {
     question: '¿Qué incluye el acompañamiento terapéutico?',
     answer:
-      'Incluye sesiones semanales, ejercicios somáticos, meditaciones guiadas, seguimiento en WhatsApp y materiales de integración. Trabajamos metas claras, con evaluación quincenal de avances.'
+      'Incluye sesiones semanales, ejercicios somáticos, meditaciones guiadas, seguimiento en WhatsApp y materiales de integración. Trabajamos metas claras para aliviar síntomas físicos, regular tu mente y honrar tu espiritualidad.'
   },
   {
     question: '¿Con cuánta anticipación debo agendar?',
     answer:
-      'Los cupos se abren mensualmente. Te recomiendo agendar con al menos una semana de anticipación. Si necesitas un espacio urgente, escríbeme por WhatsApp y haré lo posible por brindarte un lugar.'
+      'Los cupos se abren mensualmente. Te recomiendo agendar con al menos una semana de anticipación. Si necesitas un espacio urgente para gestionar dolor o crisis emocional, escríbeme por WhatsApp y haré lo posible por brindarte un lugar.'
   }
 ];
 ---
 
-<BaseLayout title="Servicios · Ama Energía" description="Sanación pránica, reiki, terapia holística y psicoterapia integrativa con Alejandra Álvarez.">
+<BaseLayout title="Servicios · Ama Energía" description="Sanación pránica enfocada en chakras, reiki, terapia holística y psicoterapia integrativa con Alejandra Álvarez para sanar cuerpo, mente y espíritu.">
   <Navbar />
   <main class="pt-24">
     <PageHero
       eyebrow="Servicios Ama"
       title="Sanación pránica, reiki, terapia holística y psicoterapia integrativa"
-      description="Cada servicio está diseñado para acompañar distintas capas de tu proceso: aliviar síntomas físicos, liberar emociones densas, cultivar autoconciencia y crear hábitos amorosos para sostener tu expansión."
+      description="Cada servicio está diseñado para aliviar síntomas físicos como migrañas o problemas digestivos, calmar tu mente y abrir tu conexión espiritual. Trabajamos de forma personalizada sobre los chakras relacionados con tus necesidades."
     />
     <Servicios />
+    <CasosSanacion />
 
     <section class="bg-white py-24">
       <div class="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <div class="space-y-6 animate-fade-up">
           <h2 class="font-display text-3xl font-semibold text-dark">¿Cómo elegir tu servicio?</h2>
           <p class="text-base text-dark/70">
-            Si buscas un reinicio energético inmediato, empieza con sanación pránica o reiki. Si necesitas acompañamiento emocional, terapia holística te ofrece herramientas de autoconciencia. Para procesos profundos de transformación, la psicoterapia integrativa combina energía, cuerpo y mente.
+            Si buscas un reinicio energético inmediato para calmar dolor físico, empieza con sanación pránica o reiki. Si necesitas acompañamiento emocional y mental, terapia holística te brinda herramientas de autoconciencia. Para procesos profundos de transformación y expansión espiritual, la psicoterapia integrativa combina energía, cuerpo y mente.
           </p>
           <ul class="space-y-4 text-sm text-dark/75">
             <li class="flex items-start gap-3">
               <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-600">1</span>
-              <span>Agendamos una entrevista inicial para conocer tu historia, síntomas físicos, emociones y objetivos.</span>
+              <span>Agendamos una entrevista inicial para conocer tus síntomas físicos, emociones y objetivos.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-600">2</span>
@@ -60,7 +62,7 @@ const faqs = [
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-600">3</span>
-              <span>Recibes guía previa, rituales sugeridos y acompañamiento por WhatsApp entre sesiones.</span>
+              <span>Recibes guía previa, rituales sugeridos y acompañamiento por WhatsApp para registrar avances físicos, mentales y espirituales.</span>
             </li>
           </ul>
         </div>
